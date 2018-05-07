@@ -23,7 +23,8 @@ namespace FPSBoys
 			//LOS INPUTS DE CUANDO ESTES EN GAMEPLAY
 			if (Manager_Static.appManager.currentState == AppState.gameplay) {
 				if (Input.GetAxisRaw ("Left_Trigger") <= -0.5f) {
-					Debug.Log ("El valor del gatillo izquierdo es: " + Input.GetAxisRaw ("Left_Trigger"));
+					//Inteto manda a llamr a un escript de player controler
+					SendMessage ("aim", true, SendMessageOptions.DontRequireReceiver);
 				}
 				if (Input.GetAxisRaw ("Right_Trigger") <= -0.5f) {
 					Debug.Log ("El valor del gatillo derecho es: " + Input.GetAxisRaw ("Right_Trigger"));
