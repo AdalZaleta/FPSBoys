@@ -2,15 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Static_Manager : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
+namespace FPSBoys
+{
+	public enum AppState
+	{
+		main_menu,
+		gameplay,
+		pause_menu,
+		end_game,
+		credits
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public enum ControllerSide
+	{
+		player1 = 0,
+		player2 = 1
+	}
+
+	public static class Manager_Static
+	{
+		public static Manager_Input inputManager;
+		public static Manager_App appManager;
 	}
 }
