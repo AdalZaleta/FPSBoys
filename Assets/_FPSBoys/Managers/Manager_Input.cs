@@ -28,6 +28,7 @@ namespace FPSBoys
 				}
 				if (Input.GetAxisRaw ("Right_Trigger") <= -0.5f) {
 					Debug.Log ("El valor del gatillo derecho es: " + Input.GetAxisRaw ("Right_Trigger"));
+
 				}
 			}
 
