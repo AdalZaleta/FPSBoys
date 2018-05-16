@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BulletTest : MonoBehaviour {
 
+	public float force;
+	public GameObject IcerodPrefab;
 	public GameObject explosionPrefab;
 
 	// Use this for initialization
@@ -24,6 +26,24 @@ public class BulletTest : MonoBehaviour {
 			Instantiate (explosionPrefab, transform.position, Quaternion.identity);
 			Destroy (gameObject);
 		}
+	}
 
+	void OnTriggerEnter(Collider _col)
+	{
+		if (_col.gameObject.GetComponent<Rigidbody>())
+		{
+			_col.gameObject.GetComponent<Rigidbody> ().AddForce (-gameObject.transform.up * force);
+		}
+		_col.gameObject.SendMessage ("GotDamage", SendMessageOptions.DontRequireReceiver);
+		StartCoroutine (Stab (_col.gameObject));
+	}
+
+	IEnumerator Stab(GameObject parent)
+	{
+		yield return new WaitForSeconds (0.02f);
+		GameObject icerod = Instantiate (IcerodPrefab, transform.position, transform.rotation);
+		icerod.transform.parent = parent.transform;
+		Destroy (icerod, 2.0f);
+		Destroy (gameObject);
 	}
 }
