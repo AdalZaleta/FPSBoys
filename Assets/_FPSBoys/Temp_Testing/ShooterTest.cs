@@ -28,9 +28,9 @@ public class ShooterTest : MonoBehaviour {
 		{
 			myWeapons [currentWeapon].OnShootUp ();
 		}
-		if (Input.GetKey(KeyCode.F))
+		if (Input.GetKey(KeyCode.R))
 		{
-			myWeapons [currentWeapon].OnShoot ();
+			myWeapons [currentWeapon].Reload ();
 		}
 		if (Input.GetKeyDown(KeyCode.Q))
 		{
@@ -44,15 +44,19 @@ public class ShooterTest : MonoBehaviour {
 
 	void NextWeapon()
 	{
+		myWeapons [currentWeapon].Sheathe ();
 		currentWeapon++;
 		if (currentWeapon >= myWeapons.Length)
 			currentWeapon = 0;
+		myWeapons [currentWeapon].UnSheathe ();
 	}
 
 	void PreviousWeapon()
 	{
+		myWeapons [currentWeapon].Sheathe ();
 		currentWeapon--;
 		if (currentWeapon < 0)
 			currentWeapon = myWeapons.Length - 1;
+		myWeapons [currentWeapon].UnSheathe ();
 	}
 }

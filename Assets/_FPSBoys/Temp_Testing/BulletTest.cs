@@ -40,9 +40,10 @@ public class BulletTest : MonoBehaviour {
 
 	IEnumerator Stab(GameObject parent)
 	{
-		yield return new WaitForSeconds (0.02f);
+		yield return new WaitForSeconds (0.0001f);
 		GameObject icerod = Instantiate (IcerodPrefab, transform.position, transform.rotation);
 		icerod.transform.parent = parent.transform;
+		icerod.transform.localScale = new Vector3 (4, 10, 4);
 		Destroy (icerod, 2.0f);
 		Destroy (gameObject);
 	}

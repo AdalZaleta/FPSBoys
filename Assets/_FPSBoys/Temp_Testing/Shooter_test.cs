@@ -34,6 +34,21 @@ public class Shooter_test : MonoBehaviour {
 		}
 	}
 
+	public virtual void Reload()
+	{
+		
+	}
+
+	public virtual void Sheathe ()
+	{
+		
+	}
+
+	public virtual void UnSheathe ()
+	{
+		
+	}
+
 	public virtual void ExecuteShoot()
 	{
 		lastShootTime = Time.time;

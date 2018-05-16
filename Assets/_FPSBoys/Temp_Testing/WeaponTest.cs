@@ -21,6 +21,21 @@ public class WeaponTest : Shooter_test {
 		line.enabled = false;
 	}
 
+	public override void Sheathe()
+	{
+		anim.SetBool ("Load", false);
+	}
+
+	public override void UnSheathe()
+	{
+		anim.SetBool ("Load", true);
+	}
+
+	public override void Reload()
+	{
+		anim.SetTrigger("Reload");
+	}
+
 	public override void OnShoot()
 	{
 		Shoot();
