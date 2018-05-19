@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace FPSBoys{
 	public class EvilBoi_Behaviour : MonoBehaviour {
@@ -10,6 +11,25 @@ namespace FPSBoys{
 		int shockdmg = 1;
 		bool canDmg = true;
 		public GameObject model;
+		public NavMeshAgent agent;
+		GameObject player;
+
+		void Start()
+		{
+			player = GameObject.FindGameObjectWithTag ("Player");
+			agent.SetDestination (player.transform.position);
+		}
+
+		void Update()
+		{
+			if (agent.enabled == true) 
+			{
+				if (player)
+					agent.SetDestination (player.transform.position);
+				else
+					agent.SetDestination (gameObject.transform.position);
+			}
+		}
 
 		public void ReceiveDmg(int type)
 		{
@@ -51,7 +71,7 @@ namespace FPSBoys{
 		{
 			if (HP <= 0)
 			{
-				model.GetComponent<Animator> ().SetBool ("Load", false);
+				StartCoroutine (Flop ());
 			}
 		}
 
@@ -77,6 +97,17 @@ namespace FPSBoys{
 				time--;
 				StartCoroutine (shock (time));
 			}
+		}
+
+		IEnumerator Flop()
+		{
+			agent.enabled = false;
+			model.GetComponent<Animator> ().SetBool ("in", false);
+			yield return new WaitForSeconds (0.25f);
+			model.GetComponent<Animator> ().enabled = false;
+			model.GetComponent<Rigidbody> ().useGravity = true;
+			model.GetComponent<Rigidbody> ().isKinematic = false;
+			Destroy (gameObject, 5.0f);
 		}
 	}
 }
