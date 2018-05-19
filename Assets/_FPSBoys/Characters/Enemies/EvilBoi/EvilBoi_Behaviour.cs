@@ -8,44 +8,64 @@ namespace FPSBoys{
 		public int HP;
 		int freezeCount;
 		int shockdmg = 1;
+		bool canDmg = true;
 		public GameObject model;
 
-		public void RecieveDmg(int type, int dmg)
+		public void ReceiveDmg(int type)
 		{
-			switch (type)
+			if (canDmg) 
 			{
-			case 1:
-				// Default Bullet Event
-				HP -= dmg;
-				StartCoroutine (blink ());
-				break;
-			case 2:
-				// Ice Bullet Event
-				HP -= dmg;
-				freezeCount++;
-				StartCoroutine (blink ());
-				break;
-			case 3:
-				// Lightning Bullet Event
-				HP -= dmg;
-				StartCoroutine (shock (3));
-				StartCoroutine (blink ());
-				break;
-			default:
-				Debug.Log ("Switch entered default");
-				break;
+				switch (type) 
+				{
+				case 1:
+					// Default Bullet Event
+					Debug.Log ("Damaged | Common");
+					HP -= 10;
+					StartCoroutine (blink ());
+					CheckHP ();
+					break;
+				case 2:
+					// Ice Bullet Event
+					Debug.Log ("Damaged | Freeze");
+					HP -= 25;
+					freezeCount++;
+					StartCoroutine (blink ());
+					CheckHP ();
+					break;
+				case 3:
+					// Lightning Bullet Event
+					Debug.Log ("Damaged | Lightning");
+					HP -= 10;
+					StartCoroutine (shock (3));
+					StartCoroutine (blink ());
+					CheckHP ();
+					break;
+				default:
+					Debug.Log ("Switch entered default");
+					break;
+				}
+			}
+		}
+
+		public void CheckHP ()
+		{
+			if (HP <= 0)
+			{
+				model.GetComponent<Animator> ().SetBool ("Load", false);
 			}
 		}
 
 		IEnumerator blink()
 		{
-			model.GetComponent<SkinnedMeshRenderer> ().material.color = Color.red;
-			yield return new WaitForSeconds (0.2f);
-			model.GetComponent<SkinnedMeshRenderer> ().material.color = Color.white;
-			yield return new WaitForSeconds (0.2f);
-			model.GetComponent<SkinnedMeshRenderer> ().material.color = Color.red;
-			yield return new WaitForSeconds (0.2f);
-			model.GetComponent<SkinnedMeshRenderer> ().material.color = Color.white;
+			canDmg = false;
+			model.GetComponent<MeshRenderer> ().material.color = Color.red;
+			yield return new WaitForSeconds (0.05f);
+			model.GetComponent<MeshRenderer> ().material.color = Color.white;
+			yield return new WaitForSeconds (0.05f);
+			model.GetComponent<MeshRenderer> ().material.color = Color.red;
+			yield return new WaitForSeconds (0.05f);
+			model.GetComponent<MeshRenderer> ().material.color = Color.white;
+			canDmg = true;
 		}
 
 		IEnumerator shock(int time)

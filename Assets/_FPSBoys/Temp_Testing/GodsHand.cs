@@ -16,15 +16,15 @@ namespace FPSBoys{
 		void Update () {
 			if (Input.GetKeyDown(KeyCode.Alpha1))
 			{
-				enemy.GetComponent<EvilBoi_Behaviour> ().RecieveDmg (1, 10);
+				enemy.GetComponent<EvilBoi_Behaviour> ().ReceiveDmg (1);
 			}
 			if (Input.GetKeyDown(KeyCode.Alpha2))
 			{
-				enemy.GetComponent<EvilBoi_Behaviour> ().RecieveDmg (2, 20);
+				enemy.GetComponent<EvilBoi_Behaviour> ().ReceiveDmg (2);
 			}
 			if (Input.GetKeyDown(KeyCode.Alpha3))
 			{
-				enemy.GetComponent<EvilBoi_Behaviour> ().RecieveDmg (3, 30);
+				enemy.GetComponent<EvilBoi_Behaviour> ().ReceiveDmg (3);
 			}
 		}
 	}

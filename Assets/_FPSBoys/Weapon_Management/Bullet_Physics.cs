@@ -34,7 +34,7 @@ public class Bullet_Physics : MonoBehaviour {
 		{
 			_col.gameObject.GetComponent<Rigidbody> ().AddForce (-gameObject.transform.up * force);
 		}
-		_col.gameObject.SendMessage ("GotDamage", SendMessageOptions.DontRequireReceiver);
+		_col.gameObject.SendMessage ("RecieveDmg", 2, SendMessageOptions.DontRequireReceiver);
 		StartCoroutine (Stab (_col.gameObject));
 	}
 
