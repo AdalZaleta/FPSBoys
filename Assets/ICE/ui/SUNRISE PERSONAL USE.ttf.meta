@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 7892b99e4b40ff443b1dbc88242dd70a
+timeCreated: 1526758593
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: SUNRISE PERSONAL USE
+  fontNames:
+  - SUNRISE PERSONAL USE
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
