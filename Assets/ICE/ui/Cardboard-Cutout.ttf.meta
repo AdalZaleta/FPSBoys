@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 2427c2ae71dfc0f4586f3f9fb3b7ff7e
+timeCreated: 1526758593
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Cardboard-Cutout
+  fontNames:
+  - Cardboard-Cutout
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
