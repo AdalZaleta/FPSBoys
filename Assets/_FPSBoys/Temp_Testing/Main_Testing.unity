@@ -734,6 +734,57 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 504210926}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &821185330
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 195564273036199632, guid: 7a5bfb1b0095d32468d3d515b1b2f887,
+        type: 2}
+      propertyPath: m_StoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538166432180712, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_Name
+      value: EvilBoi_Controller (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &978965824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,6 +1150,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 195564273036199632, guid: 7a5bfb1b0095d32468d3d515b1b2f887,
+        type: 2}
+      propertyPath: m_StoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
   m_IsPrefabParent: 0
@@ -1401,6 +1457,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1554984032
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 195564273036199632, guid: 7a5bfb1b0095d32468d3d515b1b2f887,
+        type: 2}
+      propertyPath: m_StoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538166432180712, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_Name
+      value: EvilBoi_Controller (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1597119983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1689,6 +1796,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1970860643
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952450519260376, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 195564273036199632, guid: 7a5bfb1b0095d32468d3d515b1b2f887,
+        type: 2}
+      propertyPath: m_StoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538166432180712, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+      propertyPath: m_Name
+      value: EvilBoi_Controller (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7a5bfb1b0095d32468d3d515b1b2f887, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1996959684
 GameObject:
   m_ObjectHideFlags: 0
