@@ -23,5 +23,6 @@ namespace FPSBoys
 	{
 		public static Manager_Input inputManager;
 		public static Manager_App appManager;
+		public static Manager_Scene scenManager;
 	}
 }
