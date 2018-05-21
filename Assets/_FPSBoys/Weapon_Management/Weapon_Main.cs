@@ -13,12 +13,12 @@ public class Weapon_Main : MonoBehaviour {
 
 	public virtual void OnShootDown()
 	{
-
+		Debug.Log ("ShootDown desde Main");
 	}
 
 	public virtual void OnShoot()
 	{
-
+		Debug.Log ("OnShoot desde Main");
 	}
 
 	public virtual void OnShootUp()

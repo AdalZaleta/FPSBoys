@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XInputDotNetPure;
 
 namespace FPSBoys
 {	
@@ -10,6 +11,7 @@ namespace FPSBoys
 		{
 			//ASIGNO AL MANAGER STATIC CUAL VA A SER EL INPUT MANGER
 			Manager_Static.inputManager = this;
+			Debug.Log ("Awake del Input");
 		}
 
 		void Update()
@@ -26,9 +28,16 @@ namespace FPSBoys
 					//Inteto manda a llamr a un escript de player controler
 					SendMessage ("aim", true, SendMessageOptions.DontRequireReceiver);
 				}
-				if (Input.GetAxisRaw ("Right_Trigger") <= -0.5f) {
-					Debug.Log ("El valor del gatillo derecho es: " + Input.GetAxisRaw ("Right_Trigger"));
-
+				if (Input.GetAxisRaw ("Right_Trigger") <= -0.7f) {
+					//Debug.Log ("El valor del gatillo derecho es: " + Input.GetAxisRaw ("Right_Trigger"));
+					GamePad.SetVibration (PlayerIndex.One, 0.75f, 0.75f);
+					ShootHandler (1);
+					Debug.Log ("Se llamo al Handler");
+					//GamePad.SetVibration (1, 0.5, 0.5);
+				}
+				if (Input.GetAxisRaw ("Right_Trigger") > -0.5f) {
+					GamePad.SetVibration (PlayerIndex.One, 0f, 0f);
+					//GamePad.SetVibration (1, 0.5, 0.5);
 				}
 			}
 
@@ -40,5 +49,11 @@ namespace FPSBoys
 			if (Manager_Static.appManager.currentState == AppState.end_game) {
 			}
 		}
+
+		public delegate void InputTemplate (int _id);
+
+		public InputTemplate ShootHandler;
+		public InputTemplate ShootDownHandler;
+		public InputTemplate ShootUpHandler;
 	}
 }

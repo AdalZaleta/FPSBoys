@@ -9,9 +9,28 @@ namespace FPSBoys
 		public Weapon_Main[] myWeapons;
 		public int currentWeapon;
 
+		void OnEnable ()
+		{
+			//Manager_Static.inputManager.ShootDownHandler += UserShootDown;
+			Manager_Static.inputManager.ShootHandler += UserShoot;
+			Debug.Log ("Sucribe to Input");
+		}
+
+		void OnDisable ()
+		{
+			//Manager_Static.inputManager.ShootDownHandler -= UserShootDown;
+			Manager_Static.inputManager.ShootHandler -= UserShoot;
+		}
+
+		void OnDestroy ()
+		{
+			//Manager_Static.inputManager.ShootDownHandler -= UserShootDown;
+			Manager_Static.inputManager.ShootHandler -= UserShoot;
+		}
+
 		// Update is called once per frame
 		void Update () {
-			if (Input.GetMouseButtonDown(0))
+			/*if (Input.GetMouseButtonDown(0))
 			{
 				myWeapons [currentWeapon].OnShootDown ();
 			}
@@ -34,16 +53,17 @@ namespace FPSBoys
 			if (Input.GetKeyDown(KeyCode.E))
 			{
 				NextWeapon ();
-			}
+			}*/
 		}
 
-		public void UserShootDown()
+		public void UserShootDown(int _i)
 		{
 			myWeapons [currentWeapon].OnShootDown ();
 		}
 
-		public void UserShoot()
+		public void UserShoot(int _i)
 		{
+			Debug.Log ("Deberia de Disparar");
 			myWeapons [currentWeapon].OnShoot ();
 		}
 
