@@ -13,7 +13,7 @@ namespace FPSBoys
 		{
 			//Manager_Static.inputManager.ShootDownHandler += UserShootDown;
 			Manager_Static.inputManager.ShootHandler += UserShoot;
-			Debug.Log ("Sucribe to Input");
+			//Debug.Log ("Subscribe to Input");
 		}
 
 		void OnDisable ()
@@ -30,13 +30,18 @@ namespace FPSBoys
 
 		// Update is called once per frame
 		void Update () {
-			/*if (Input.GetMouseButtonDown(0))
+			// Mouse Testing Controls
+			if (Input.GetMouseButtonDown(0))
 			{
 				myWeapons [currentWeapon].OnShootDown ();
 			}
-			if (Input.GetMouseButton(0))
+			if (Input.GetMouseButton(0)) 
 			{
 				myWeapons [currentWeapon].OnShoot ();
+			}
+			if (Input.GetMouseButtonDown(1))
+			{
+				myWeapons [currentWeapon].OnThrowDown ();
 			}
 			if (Input.GetMouseButtonUp(0))
 			{
@@ -53,7 +58,7 @@ namespace FPSBoys
 			if (Input.GetKeyDown(KeyCode.E))
 			{
 				NextWeapon ();
-			}*/
+			}
 		}
 
 		public void UserShootDown(int _i)

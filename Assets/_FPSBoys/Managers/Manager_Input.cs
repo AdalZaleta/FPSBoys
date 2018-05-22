@@ -32,7 +32,7 @@ namespace FPSBoys
 					//Debug.Log ("El valor del gatillo derecho es: " + Input.GetAxisRaw ("Right_Trigger"));
 					GamePad.SetVibration (PlayerIndex.One, 0.75f, 0.75f);
 					ShootHandler (1);
-					Debug.Log ("Se llamo al Handler");
+					//Debug.Log ("Se llamo al Handler");
 					//GamePad.SetVibration (1, 0.5, 0.5);
 				}
 				if (Input.GetAxisRaw ("Right_Trigger") > -0.5f) {

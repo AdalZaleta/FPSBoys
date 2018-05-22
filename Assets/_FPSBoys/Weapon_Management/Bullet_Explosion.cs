@@ -16,7 +16,7 @@ public class Bullet_Explosion : MonoBehaviour {
 
 	protected void OnTriggerEnter(Collider _col)
 	{
-		_col.gameObject.SendMessage ("GotDamage", SendMessageOptions.DontRequireReceiver);
+		_col.gameObject.SendMessage ("GotDamage", 1, SendMessageOptions.DontRequireReceiver);
 		if (_col.gameObject.GetComponent<Rigidbody>())
 		{
 			_col.gameObject.GetComponent<Rigidbody> ().AddExplosionForce (explosionForce, transform.position, myCollider.radius);

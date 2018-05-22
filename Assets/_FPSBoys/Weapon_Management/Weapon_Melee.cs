@@ -6,6 +6,10 @@ public class Weapon_Melee : Weapon_Main {
 
 	[Header("Variables del Arma Melee")]
 	public Animator anim;
+	public GameObject handle;
+	public GameObject prefSword;
+	public GameObject model;
+	public float speed;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +26,11 @@ public class Weapon_Melee : Weapon_Main {
 		anim.SetBool ("Sheathe", true);
 	}
 
+	public override void OnThrowDown()
+	{
+		Throw ();
+	}
+
 	public override void OnShoot()
 	{
 		Shoot ();
@@ -31,5 +40,24 @@ public class Weapon_Melee : Weapon_Main {
 	{
 		base.ExecuteShoot ();
 		anim.SetTrigger ("Slash");
+	}
+
+	public override void ExecuteThrow()
+	{
+		base.ExecuteThrow ();
+		anim.SetTrigger ("Throw");
+		StartCoroutine (thrown ());
+	}
+
+	IEnumerator thrown()
+	{
+		yield return new WaitForSeconds (0.40f);
+		model.GetComponent<MeshRenderer> ().enabled = false;
+		GameObject go = Instantiate (prefSword, handle.transform.position, handle.transform.rotation);
+		go.GetComponent<Rigidbody> ().AddForce (handle.transform.forward * speed);
+		//anim.SetBool ("Sheathe", false);
+		yield return new WaitForSeconds (0.25f);
+		model.GetComponent<MeshRenderer> ().enabled = true;
+		anim.SetBool ("Sheathe", true);
 	}
 }

@@ -9,16 +9,23 @@ public class Weapon_Main : MonoBehaviour {
 	[Header("Variables de todas las armas")]
 	public Transform spawnPoint;
 	public float firerate = 0.1f;
+	float throwrate = 2.0f;
 	internal float lastShootTime;
+	internal float lastThrowTime;
 
 	public virtual void OnShootDown()
 	{
-		Debug.Log ("ShootDown desde Main");
+		
+	}
+
+	public virtual void OnThrowDown()
+	{
+		
 	}
 
 	public virtual void OnShoot()
 	{
-		Debug.Log ("OnShoot desde Main");
+		
 	}
 
 	public virtual void OnShootUp()
@@ -31,6 +38,14 @@ public class Weapon_Main : MonoBehaviour {
 		if (Time.time > lastShootTime + firerate)
 		{
 			ExecuteShoot ();
+		}
+	}
+
+	public virtual void Throw()
+	{
+		if (Time.time > lastThrowTime + throwrate)
+		{
+			ExecuteThrow ();
 		}
 	}
 
@@ -52,5 +67,10 @@ public class Weapon_Main : MonoBehaviour {
 	public virtual void ExecuteShoot()
 	{
 		lastShootTime = Time.time;
+	}
+
+	public virtual void ExecuteThrow()
+	{
+		lastThrowTime = Time.time;
 	}
 }

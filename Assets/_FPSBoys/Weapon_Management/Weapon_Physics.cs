@@ -33,7 +33,7 @@ public class Weapon_Physics : Weapon_Main {
 		anim.SetTrigger("Reload");
 	}
 
-	public override void OnShootDown()
+	public override void OnShoot()
 	{
 		Shoot();
 	}
