@@ -11,7 +11,6 @@ namespace FPSBoys
 		{
 			//ASIGNO AL MANAGER STATIC CUAL VA A SER EL INPUT MANGER
 			Manager_Static.inputManager = this;
-			Debug.Log ("Awake del Input");
 		}
 
 		void Update()
@@ -39,6 +38,7 @@ namespace FPSBoys
 					GamePad.SetVibration (PlayerIndex.One, 0f, 0f);
 					//GamePad.SetVibration (1, 0.5, 0.5);
 				}
+
 			}
 
 			//LOS INPUTS DE CUANDO ESTES EN GAME_MENU
