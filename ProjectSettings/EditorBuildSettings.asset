@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_FPSBoys/Scenes/Main_Menu.unity
+    guid: 9a790265a15c5234b92a75f5e4bf9042
+  - enabled: 1
+    path: Assets/ICE/ui/select menu/select menu.unity
+    guid: e94208d157dfbc5468c5105014e0ec9a
