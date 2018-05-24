@@ -23,6 +23,7 @@ namespace FPSBoys
 
 			//LOS INPUTS DE CUANDO ESTES EN GAMEPLAY
 			if (Manager_Static.appManager.currentState == AppState.gameplay) {
+				Manager_Static.uiManager.ShowTime ();
 				if (Input.GetAxisRaw ("Left_Trigger") <= -0.5f) {
 					//Inteto manda a llamr a un escript de player controler
 					SendMessage ("aim", true, SendMessageOptions.DontRequireReceiver);
@@ -53,10 +54,19 @@ namespace FPSBoys
 					SwitchWeaponHandler(-1);
 					Debug.Log("Pressed Left Bumper");
 				}
+				if (Input.GetKeyDown (KeyCode.JoystickButton7)) 
+				{
+					Manager_Static.appManager.currentState = AppState.pause_menu;
+				}
 			}
 
 			//LOS INPUTS DE CUANDO ESTES EN GAME_MENU
 			if (Manager_Static.appManager.currentState == AppState.pause_menu) {
+				Manager_Static.uiManager.PauseTime ();
+				if (Input.GetKeyDown (KeyCode.JoystickButton6)) 
+				{
+					Manager_Static.appManager.currentState = AppState.gameplay;
+				}
 			}
 
 			//LOS INPUTS DE CUANDO ESTES EN END_GAME

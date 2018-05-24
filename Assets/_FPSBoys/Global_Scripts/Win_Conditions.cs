@@ -16,6 +16,10 @@ namespace FPSBoys
 				timeGoal -= Time.deltaTime;
 
 			timer.text = "Time: " + (int)timeGoal + " seg";
+
+
+			if (timeGoal < 0)
+				Debug.Log ("Has ganado");
 		}
 	}
 }
