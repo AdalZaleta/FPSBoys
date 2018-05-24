@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ICE/ui/settings.unity
     guid: f1efe809fb8cd8b419485fb0d39d43b1
+  - enabled: 1
+    path: Assets/_FPSBoys/Temp_Testing/Main_Testing.unity
+    guid: bf387f4eb2cf06f489d1e1740bc4b107
