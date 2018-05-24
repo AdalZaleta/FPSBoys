@@ -44,6 +44,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 		private bool run = false;
 
+		public float HP = 100;
+		private float lasthit;
+		private float DmgCooldown = 0.75f;
+
         // Use this for initialization
         private void Start()
         {
@@ -57,8 +61,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+
+			lasthit = Time.time;
         }
 
+		public void ReceiveDmg(int _dmg)
+		{
+			HP -= _dmg;
+			if (HP <= 0)
+			{
+				Destroy (gameObject);
+			}
+		}
 
         // Update is called once per frame
         private void Update()
