@@ -19,7 +19,7 @@ namespace FPSBoys
 
 
 			if (timeGoal < 0)
-				Manager_Static.scenManager.LoadScene (6);
+				Manager_Static.scenManager.LoadScene (5);
 		}
 	}
 }
