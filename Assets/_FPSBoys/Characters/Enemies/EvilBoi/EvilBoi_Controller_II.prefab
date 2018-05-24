@@ -296,7 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 10
   Dmg: 10
-  AtkCooldown: 0
+  AtkCooldown: 0.75
   model: {fileID: 1819134636858812}
   anim: {fileID: 95952173892282048}
   agent: {fileID: 195307309064065294}

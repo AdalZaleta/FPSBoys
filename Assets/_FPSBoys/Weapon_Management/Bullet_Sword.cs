@@ -19,7 +19,7 @@ public class Bullet_Sword : MonoBehaviour {
 		if (_col.gameObject.CompareTag ("Enemy"))
 		{
 			_col.gameObject.SendMessage ("ReceiveDmg", 1, SendMessageOptions.DontRequireReceiver);
-			Destroy (gameObject);
+			Destroy (gameObject, 2.0f);
 		}
 		else if (_col.gameObject.CompareTag("Scene"))
 		{

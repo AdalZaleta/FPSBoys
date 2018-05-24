@@ -12,7 +12,6 @@ namespace FPSBoys{
 		int freezeCount;
 		int shockdmg = 1;
 		bool canDmg = true;
-		bool inRange = false;
 		public GameObject model;
 		public Animator anim;
 		public NavMeshAgent agent;
@@ -23,6 +22,7 @@ namespace FPSBoys{
 		{
 			player = GameObject.FindGameObjectWithTag ("Player");
 			agent.SetDestination (player.transform.position);
+			lasthit = Time.time;
 		}
 
 		void Update()
@@ -32,38 +32,18 @@ namespace FPSBoys{
 				if (player)
 				{
 					agent.SetDestination (player.transform.position);
-					if (agent.remainingDistance <= 1)
-					{
-						inRange = true;
-					}
-					else
-					{
-						inRange = false;
-					}
-					if (inRange)
-					{
-						if (Time.time > lasthit + AtkCooldown)
-						{
-							Debug.Log("Attack!");
-							Attack ();
-							lasthit = Time.time;
-						}
-
-					}
 				}
-				else
-				{
-					inRange = false;
-					agent.SetDestination (gameObject.transform.position);
-				}
-					
 			}
 		}
 
 		public void Attack()
 		{
-			anim.SetTrigger ("attack");
-			player.SendMessage ("ReceiveDmg", Dmg, SendMessageOptions.DontRequireReceiver);
+			Debug.Log ("Attack!");
+			if (Time.time > lasthit + AtkCooldown)
+			{
+				anim.SetTrigger ("attack");
+				player.SendMessage ("ReceiveDmg", Dmg, SendMessageOptions.DontRequireReceiver);
+			}
 		}
 
 		public void ReceiveDmg(int type)

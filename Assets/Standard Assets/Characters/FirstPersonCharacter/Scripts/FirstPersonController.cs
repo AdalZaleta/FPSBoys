@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using UnityEngine.UI;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
@@ -44,9 +46,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 		private bool run = false;
 
+		public Image dmgImg;
+
 		public float HP = 100;
-		private float lasthit;
-		private float DmgCooldown = 0.75f;
 
         // Use this for initialization
         private void Start()
@@ -62,12 +64,32 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
 
-			lasthit = Time.time;
+			dmgImg.color = new Color (1, 1, 1, 0);
         }
+
+		void OnTriggerEnter(Collider _col)
+		{
+			if (_col.gameObject.CompareTag("Enemy"))
+			{
+				_col.gameObject.SendMessage ("Attack", SendMessageOptions.DontRequireReceiver);
+			}
+		}
+
+		IEnumerator Damage(float _alpha)
+		{
+			dmgImg.color = new Color (1, 1, 1, _alpha);
+			if (_alpha > 0)
+			{
+				_alpha -= 0.1f;
+				yield return new WaitForSeconds (0.05f);
+				StartCoroutine (Damage (_alpha));
+			}
+		}
 
 		public void ReceiveDmg(int _dmg)
 		{
 			HP -= _dmg;
+			StartCoroutine (Damage (1.0f));
 			if (HP <= 0)
 			{
 				Destroy (gameObject);
@@ -280,4 +302,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
         }
     }
+
+
 }

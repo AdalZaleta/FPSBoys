@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 114170127570771088}
   - component: {fileID: 54164667528550122}
   - component: {fileID: 82786356082886480}
+  - component: {fileID: 135899918418753752}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -425,7 +426,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1844431470773398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.14, z: 0}
+  m_LocalPosition: {x: 57, y: -3.16, z: 131.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4719301228627184}
@@ -1098,6 +1099,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  dmgImg: {fileID: 0}
+  HP: 100
 --- !u!114 &114282356507019248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1171,6 +1174,18 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1952157982887310}
   m_Enabled: 1
+--- !u!135 &135899918418753752
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1844431470773398}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &143116094075494206
 CharacterController:
   m_ObjectHideFlags: 1
