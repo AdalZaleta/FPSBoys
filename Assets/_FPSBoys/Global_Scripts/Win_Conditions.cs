@@ -19,7 +19,7 @@ namespace FPSBoys
 
 
 			if (timeGoal < 0)
-				Debug.Log ("Has ganado");
+				Manager_Static.scenManager.LoadScene (6);
 		}
 	}
 }
