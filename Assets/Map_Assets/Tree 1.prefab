@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 193537022303715430}
   - component: {fileID: 33931493480738932}
   - component: {fileID: 23630690637315048}
+  - component: {fileID: 64109767512626960}
   m_Layer: 0
   m_Name: Tree 1
   m_TagString: Untagged
@@ -296,6 +297,20 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!64 &64109767512626960
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1930091946578488}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43782931729257034}
 --- !u!114 &114731666226783202
 MonoBehaviour:
   m_ObjectHideFlags: 0
