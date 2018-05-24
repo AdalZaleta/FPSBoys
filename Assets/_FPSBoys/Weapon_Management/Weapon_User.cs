@@ -13,6 +13,8 @@ namespace FPSBoys
 		{
 			//Manager_Static.inputManager.ShootDownHandler += UserShootDown;
 			Manager_Static.inputManager.ShootHandler += UserShoot;
+			Manager_Static.inputManager.ThrowHandler += UserThrow;
+			Manager_Static.inputManager.SwitchWeaponHandler += UserChangeWeapon;
 			//Debug.Log ("Subscribe to Input");
 		}
 
@@ -20,12 +22,16 @@ namespace FPSBoys
 		{
 			//Manager_Static.inputManager.ShootDownHandler -= UserShootDown;
 			Manager_Static.inputManager.ShootHandler -= UserShoot;
+			Manager_Static.inputManager.ThrowHandler -= UserThrow;
+			Manager_Static.inputManager.SwitchWeaponHandler -= UserChangeWeapon;
 		}
 
 		void OnDestroy ()
 		{
 			//Manager_Static.inputManager.ShootDownHandler -= UserShootDown;
 			Manager_Static.inputManager.ShootHandler -= UserShoot;
+			Manager_Static.inputManager.ThrowHandler -= UserThrow;
+			Manager_Static.inputManager.SwitchWeaponHandler -= UserChangeWeapon;
 		}
 
 		// Update is called once per frame
@@ -68,7 +74,6 @@ namespace FPSBoys
 
 		public void UserShoot(int _i)
 		{
-			Debug.Log ("Deberia de Disparar");
 			myWeapons [currentWeapon].OnShoot ();
 		}
 
@@ -80,6 +85,11 @@ namespace FPSBoys
 		public void UserReload()
 		{
 			myWeapons [currentWeapon].Reload ();
+		}
+
+		public void UserThrow(int _i)
+		{
+			myWeapons [currentWeapon].Throw ();
 		}
 
 		public void UserChangeWeapon(int i)
