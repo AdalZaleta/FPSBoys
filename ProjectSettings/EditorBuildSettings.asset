@@ -11,3 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ICE/ui/select menu/select menu.unity
     guid: e94208d157dfbc5468c5105014e0ec9a
+  - enabled: 1
+    path: Assets/ICE/ui/about.unity
+    guid: 8179ae6f167633e40a2c70aa465d0dbc
+  - enabled: 1
+    path: Assets/ICE/ui/settings.unity
+    guid: f1efe809fb8cd8b419485fb0d39d43b1
