@@ -11,7 +11,6 @@ namespace FPSBoys
 		{
 			//ASIGNO AL MANAGER STATIC CUAL VA A SER EL INPUT MANGER
 			Manager_Static.inputManager = this;
-			Debug.Log ("Awake del Input");
 		}
 
 		void Update()
@@ -39,6 +38,21 @@ namespace FPSBoys
 					GamePad.SetVibration (PlayerIndex.One, 0f, 0f);
 					//GamePad.SetVibration (1, 0.5, 0.5);
 				}
+				if (Input.GetButtonDown("Fire3"))
+				{
+					ThrowHandler (1);
+					Debug.Log ("Pressed X Button");
+				}
+				if (Input.GetButtonDown("R_Bumper"))
+				{
+					SwitchWeaponHandler (1);
+					Debug.Log("Pressed Right Bumper");
+				}
+				if (Input.GetButtonDown("L_Bumper"))
+				{
+					SwitchWeaponHandler(-1);
+					Debug.Log("Pressed Left Bumper");
+				}
 			}
 
 			//LOS INPUTS DE CUANDO ESTES EN GAME_MENU
@@ -55,5 +69,7 @@ namespace FPSBoys
 		public InputTemplate ShootHandler;
 		public InputTemplate ShootDownHandler;
 		public InputTemplate ShootUpHandler;
+		public InputTemplate ThrowHandler;
+		public InputTemplate SwitchWeaponHandler;
 	}
 }
