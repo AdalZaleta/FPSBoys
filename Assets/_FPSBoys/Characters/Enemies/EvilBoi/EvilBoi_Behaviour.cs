@@ -11,6 +11,7 @@ namespace FPSBoys{
 		int shockdmg = 1;
 		bool canDmg = true;
 		public GameObject model;
+		public Animator anim;
 		public NavMeshAgent agent;
 		GameObject player;
 
@@ -102,9 +103,10 @@ namespace FPSBoys{
 		IEnumerator Flop()
 		{
 			agent.enabled = false;
-			model.GetComponent<Animator> ().SetBool ("in", false);
+			if (anim.GetBool("in"))
+				anim.SetBool ("in", false);
 			yield return new WaitForSeconds (0.25f);
-			model.GetComponent<Animator> ().enabled = false;
+			anim.enabled = false;
 			model.GetComponent<Rigidbody> ().useGravity = true;
 			model.GetComponent<Rigidbody> ().isKinematic = false;
 			Destroy (gameObject, 5.0f);

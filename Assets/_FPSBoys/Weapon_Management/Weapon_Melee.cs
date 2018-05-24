@@ -11,9 +11,13 @@ public class Weapon_Melee : Weapon_Main {
 	public GameObject model;
 	public float speed;
 
-	// Use this for initialization
-	void Start () {
-
+	void OnTriggerEnter(Collider _col)
+	{
+		Debug.Log ("Slashed " + _col);
+		if (_col.gameObject.CompareTag("Enemy"))
+		{
+			_col.gameObject.SendMessage ("ReceiveDmg", 1, SendMessageOptions.DontRequireReceiver);
+		}
 	}
 
 	public override void Sheathe()
