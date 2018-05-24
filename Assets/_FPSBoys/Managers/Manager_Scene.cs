@@ -28,6 +28,7 @@ namespace FPSBoys
 		{
 			options.GetComponent<Play_Options> ().setCurrentCharacter (_character);
 			DontDestroyOnLoad (options.GetComponent<Play_Options> ());
+			SceneManager.LoadScene ("Main_Testing");
 		}
 	}
 }
